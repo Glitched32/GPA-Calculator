@@ -1,0 +1,4 @@
+pre-beta basic stable version 12/12/24
+1.0.0 unstable version 12/13/24
+1.0.1 fixed now a stable version 12/13/24
+1.1.2 added a secret 12/13/24 and fixed some bugs
