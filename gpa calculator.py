@@ -52,10 +52,12 @@ while  redo == 1:
     class_sum = int(class1) + int(class2) + int(class3) + int(class4) + int(class5) + int(class6) + int(class7) + int(class8)
     gpa = class_sum / number_of_classes
     print(gpa)
-    file_name = input("what do you want to call your save file")
-    text = input("what do you want in your text file")
-    with open(file_name +".txt","w") as file:
-        file.writelines(text +'\n'+ str(gpa))
+    savefile = input('do you want to save to your computer:')
+    if savefile == 'yes':
+        file_name = input("what do you want to call your save file")
+        text = input("what do you want in your text file")
+        with open(file_name +".txt","w") as file:
+            file.writelines(text +'\n'+ str(gpa))
     time.sleep(2)
     redo=0
     ask = input('redo?:')
