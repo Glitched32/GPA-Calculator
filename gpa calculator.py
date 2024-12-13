@@ -2,15 +2,8 @@ import math
 import time
 import save
 number_of_classes=8
+points = 0
 redo = 1
-class1 = 0
-class2 = 0
-class3 = 0
-class4 = 0
-class5 = 0
-class6 = 0
-class7 = 0
-class8 = 0
 print("hello")
 print('welcome to Centennial gpa calculator')
 print('it only supports the grade as decimal form not letter')
@@ -58,9 +51,31 @@ while  redo == 1:
         text = input("what do you want in your text file")
         with open(file_name +".txt","w") as file:
             file.writelines(text +'\n'+ str(gpa))
+    if gpa == 4.0:
+        game = input('you have done good in class do you want to play a game')
+        if game == "yes":
+            import turtle
+            turtle.bgcolor('blue')
+            turtle.pencolor('gray')
+            turtle.shape('circle')
+            turtle.penup()
+            turtle.pencolor('white')
+            turtle.goto(x=0, y=50)
+            turtle.pendown()
+            turtle.write('press the d key', False,'center',('arial', 8, 'normal'))
+            def d():
+                points = points + 1
+                turtle.penup()
+                turtle.goto(-50, 100)
+                turtle.pendown()
+                turtle.write('points:'+points,False,'left', ('arial', 10, "normal"))
+        save_game = input('do you want to save your points in a file:')
+        if save_game == 'yes':
+            file_name_game = input('what do you want to call this file')
+            with open(file_name_game +".txt","w") as file:
+                file.writelines('your points'+'\n'+str(points))
     time.sleep(2)
     redo=0
     ask = input('redo?:')
     if ask == ('yes'):
         redo = 1
-    
