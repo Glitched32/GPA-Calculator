@@ -4,6 +4,7 @@ import save
 number_of_classes=8
 points = 0
 redo = 1
+stop_game =0
 print("hello")
 print('welcome to Centennial gpa calculator')
 print('it only supports the grade as decimal form not letter')
@@ -45,8 +46,8 @@ while  redo == 1:
     class_sum = int(class1) + int(class2) + int(class3) + int(class4) + int(class5) + int(class6) + int(class7) + int(class8)
     gpa = class_sum / number_of_classes
     print(gpa)
-    savefile = input('do you want to save to your computer:')
-    if savefile == 'yes':
+    save_file = input('do you want to save to your computer:')
+    if save_file == 'yes':
         file_name = input("what do you want to call your save file")
         text = input("what do you want in your text file")
         with open(file_name +".txt","w") as file:
@@ -54,26 +55,24 @@ while  redo == 1:
     if gpa == 4.0:
         game = input('you have done good in class do you want to play a game')
         if game == "yes":
-            import turtle
-            turtle.bgcolor('blue')
-            turtle.pencolor('gray')
-            turtle.shape('circle')
-            turtle.penup()
-            turtle.pencolor('white')
-            turtle.goto(x=0, y=50)
-            turtle.pendown()
-            turtle.write('press the d key', False,'center',('arial', 8, 'normal'))
-            def d():
-                points = points + 1
-                turtle.penup()
-                turtle.goto(-50, 100)
-                turtle.pendown()
-                turtle.write('points:'+points,False,'left', ('arial', 10, "normal"))
-        save_game = input('do you want to save your points in a file:')
-        if save_game == 'yes':
-            file_name_game = input('what do you want to call this file')
-            with open(file_name_game +".txt","w") as file:
-                file.writelines('your points'+'\n'+str(points))
+            print('this are the rules and how to play')
+            print('it will ask  do you quit and if you put yes then the game stops')
+            print('if you press anything else then it will earn you points and if you press n then you earn points')
+            time.sleep(2)
+            print('the game starts now')
+            while stop_game == 0:
+                quit_game= input('do you quit')
+                if quit_game == 'yes':
+                    stop_game = 1
+                    print(points)
+                    save_game = input('do you want to save you game points:')
+                    if save_game == 'yes':
+                        file_name_game = input('what do you want to name your save file')
+                        with open(file_name_game +'.txt', 'w') as file:
+                            file.writelines('points' +'\n'+ str(points))
+                            print('worked')
+                if quit_game == 'n':
+                    points = points + 1
     time.sleep(2)
     redo=0
     ask = input('redo?:')
