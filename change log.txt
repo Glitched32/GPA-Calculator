@@ -2,3 +2,4 @@ pre-beta basic stable version 12/12/24 | STABLE
 1.0.0 unstable version 12/13/24 | BROKEN
 1.0.1 fixed now a stable version 12/13/24 | STABLE
 1.1.2 added a secret 12/13/24 and fixed some bugs |EXPERAMENTAL
+1.2.2 fixed the secret and should be working now 12/16/24 | STABLE
