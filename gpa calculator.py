@@ -70,7 +70,7 @@ while  redo == 1:
                         file_name_game = input('what do you want to name your save file')
                         with open(file_name_game +'.txt', 'w') as file:
                             file.writelines('points' +'\n'+ str(points))
-                            print('worked')
+                            #print('worked')
                 if quit_game == 'n':
                     points = points + 1
     time.sleep(2)
